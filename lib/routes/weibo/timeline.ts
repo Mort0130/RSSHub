@@ -1,4 +1,3 @@
-// @ts-nocheck
 import cache from '@/utils/cache';
 const querystring = require('querystring');
 import got from '@/utils/got';
@@ -145,7 +144,7 @@ export default async (ctx) => {
                 'Content-Type': 'text/html; charset=UTF-8',
                 'Cache-Control': 'no-cache',
             });
-            ctx.body = `<script>window.location = '/weibo/timeline/${uid}${routeParams ? `/${routeParams}` : ''}'</script>`;
+            ctx.html(`<script>window.location = '/weibo/timeline/${uid}${routeParams ? `/${routeParams}` : ''}'</script>`);
         }
     } else {
         const { app_key = '', redirect_url = ctx.req.origin + '/weibo/timeline/0' } = config.weibo;

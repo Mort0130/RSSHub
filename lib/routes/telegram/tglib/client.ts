@@ -1,4 +1,3 @@
-// @ts-nocheck
 const readline = require('node:readline/promises');
 const { Api, TelegramClient } = require('telegram');
 const { StringSession } = require('telegram/sessions');
@@ -69,7 +68,7 @@ function ExpandInlineBytes(bytes) {
 }
 
 function getMediaLink(ctx, channel, channelName, message) {
-    const base = `${ctx.protocol}://${ctx.host}/telegram/channel/${channelName}/${config.feature.mediaProxyKey}/`;
+    const base = `${ctx.protocol}://${ctx.host}/telegram/channel/${channelName}`;
     const src = base + `${channel.channelId}_${message.id}`;
 
     const x = message.media;

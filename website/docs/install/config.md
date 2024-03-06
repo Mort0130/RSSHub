@@ -198,8 +198,6 @@ Configs in this sections are in beta stage, and **are turn off by default**. Ple
 
 `ALLOW_USER_SUPPLY_UNSAFE_DOMAIN`: allow users to provide a domain as a parameter to routes that are not in their allow list, respectively. Public instances are suggested to leave this value default, as it may lead to [Server-Side Request Forgery (SSRF)](https://owasp.org/www-community/attacks/Server_Side_Request_Forgery)
 
-`MEDIA_PROXY_KEY`: the access key for internal media proxy.
-
 ## Other Application Configurations
 
 `DISALLOW_ROBOT`: prevent indexing by search engine, default to enable, set false or 0 to disable
@@ -379,11 +377,11 @@ Warning: Two Factor Authentication is **not** supported.
 
 For user timeline
 
-apply API here `https://mastodon.example/settings/applications`(repalce `mastodon.example`), please check scope `read:search`
+Apply API at `https://mastodon.example/settings/applications` (replace `mastodon.example`). Scopes `read:search` and `read:statuses` are needed.
 
 -   `MASTODON_API_HOST`: API instance domain, only domain, no `http://` or `https://` protocol header
 -   `MASTODON_API_ACCESS_TOKEN`: user access token
--   `MASTODON_API_ACCT_DOMAIN`: acct domain for particular instance, Webfinger account URI, like `user@host`
+-   `MASTODON_API_ACCT_DOMAIN`: acct domain for this instance, i.e. the `domain` in the WebFinger URI `username@domain`. It's usually the same as `MASTODON_API_HOST`.
 
 ### Medium
 
